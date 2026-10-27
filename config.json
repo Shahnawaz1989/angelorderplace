@@ -1,0 +1,68 @@
+{
+  "app": {
+    "name": "Angel One Order Bot",
+    "mode": "desktop",
+    "theme": "dark",
+    "log_level": "INFO",
+    "timezone": "Asia/Kolkata"
+  },
+  "angel_one": {
+    "api_key": "BW8tznBr",
+    "client_code": "M173002",
+    "mpin": "7856",
+    "totp_secret": "T3ZSXQE2RXR4UIBVE5FP3COUTQ",
+    "use_totp": true
+  },
+  "network": {
+    "request_timeout_sec": 10,
+    "quote_refresh_sec": 1,
+    "reconnect_delay_sec": 3,
+    "max_retries": 5
+  },
+  "instruments": {
+    "instrument_master_url": "https://margincalculator.angelone.in/OpenAPI_File/files/OpenAPIScripMaster.json",
+    "option_underlyings": ["NIFTY", "SENSEX", "CRUDEOILM"],
+    "future_underlyings": ["CRUDEOILM"],
+    "default_option_side": "BUY",
+    "default_future_side": "BUY",
+    "strike_window_each_side": 10,
+    "default_exchange_map": {
+      "NIFTY": "NFO",
+      "SENSEX": "BFO",
+      "CRUDEOILM_OPTIONS": "MCX",
+      "CRUDEOILM_FUTURES": "MCX"
+    }
+  },
+  "order_defaults": {
+    "variety": "NORMAL",
+    "producttype": "INTRADAY",
+    "duration": "DAY",
+    "entry_ordertype": "STOPLOSS",
+    "target_ordertype": "LIMIT",
+    "stoploss_ordertype": "STOPLOSS",
+    "place_target_after_fill": true,
+    "place_stoploss_after_fill": true,
+    "watch_until_entry_fill": true,
+    "stop_watching_after_exit_orders_placed": true
+  },
+  "validation": {
+    "require_tp_above_entry_for_buy": true,
+    "require_sl_below_entry_for_buy": true,
+    "require_tp_below_entry_for_sell": true,
+    "require_sl_above_entry_for_sell": true,
+    "price_rounding_decimals": 2
+  },
+  "ui": {
+    "default_underlying": "NIFTY",
+    "default_contract_mode": "OPTION",
+    "show_live_ltp": true,
+    "show_contract_preview": true,
+    "auto_select_nearest_expiry": true,
+    "desktop_framework": "PySide6"
+  },
+  "logging": {
+    "log_to_file": true,
+    "log_file": "bot.log",
+    "json_logs": false
+  }
+}
